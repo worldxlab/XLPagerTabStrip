@@ -298,6 +298,10 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         containerView.contentOffset = CGPoint(x: pageOffsetForChild(at: currentIndex), y: 0)
         updateContent()
     }
+  
+  open func pagerTabDidScroll(_ scrollView: UIScrollView) {
+    
+  }
 
     // MARK: - UIScrollViewDelegate
 
@@ -306,6 +310,7 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
             updateContent()
             lastContentOffset = scrollView.contentOffset.x
         }
+      pagerTabDidScroll(scrollView)
     }
 
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
